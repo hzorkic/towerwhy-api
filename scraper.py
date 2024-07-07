@@ -35,8 +35,9 @@ class Scraper():
             if event_date == str(today_date):
                 # Determine lighting configuration based on description
                 lighting_config = determine_lighting_configuration(description)
+                
                 # Create a dictionary with your string as a value
-                json_object = {'color': my_string}
+                json_object = {'color': lighting_config}
                 
                 # Convert dictionary to JSON string
                 return json.dumps(json_object)
