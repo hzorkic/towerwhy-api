@@ -1,0 +1,1 @@
+web: guicorn -w 2 -k uvicorn.workers.UvicornWorker main:api
