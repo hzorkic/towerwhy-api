@@ -3,6 +3,11 @@ from bs4 import BeautifulSoup
 from datetime import datetime
 from config_mapping import determine_lighting_configuration
 
+import json
+
+
+
+
 class Scraper():
 
     # Function to fetch data from Tower website and determine today's event
@@ -30,7 +35,11 @@ class Scraper():
             if event_date == str(today_date):
                 # Determine lighting configuration based on description
                 lighting_config = determine_lighting_configuration(description)
-                return lighting_config
+                # Create a dictionary with your string as a value
+                json_object = {'color': my_string}
+                
+                # Convert dictionary to JSON string
+                return json.dumps(json_object)
         
         # Return None if no event matches today's date
         return "None"
